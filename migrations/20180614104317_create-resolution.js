@@ -1,10 +1,12 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTeable('resolution', (table) => {
+  return knex.schema.createTable('resolution', (table) => {
       table.increments()
+      table.date('dueDate')
+      table.text('resolution')
   })
 };
 
 exports.down = function(knex, Promise) {
-  
+  knex.schema.dropTable('resolution')
 };

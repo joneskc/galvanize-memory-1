@@ -5,13 +5,13 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      filename: 'postgres://localhost/galvanize-memory/version-1'
+      filename: 'postgres://localhost/resolutions-1'
     }
   },
   test: {
     client: 'pg',
     connection: {
-      filename: 'postgres://localhost/galvanize-memory/test-version-1'
+      filename: 'postgres://localhost/test-resolutions-1'
     }
   },
   production: {
