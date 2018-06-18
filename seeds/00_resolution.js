@@ -20,6 +20,6 @@ exports.seed = function(knex, Promise) {
         }
       ]);
     }).then(() => {
-      return knex.raw("ALTER SEQUENCE resolutions_id_seq RESTART WITH 4;")
+      return knex.raw("ALTER SEQUENCE resolution_id_seq RESTART WITH 4;")
     })
 };
