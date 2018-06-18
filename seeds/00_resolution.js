@@ -5,11 +5,11 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('resolution').insert([
-      {
-        id: 1,
-        dueDate: "1997-02-01",
-        resolution: "Go skiing"
-      },{
+        {
+          id: 1,
+          dueDate: "1997-02-01",
+          resolution: "Go skiing"
+        },{
           id: 2,
           dueDate: "1997-05-01",
           resolution: "Do stand-up"
@@ -19,5 +19,7 @@ exports.seed = function(knex, Promise) {
           resolution: "Start knitting"
         }
       ]);
-    });
+    }).then(() => {
+      return knex.raw("ALTER SEQUENCE resolutions_id_seq RESTART WITH 4;")
+    })
 };
